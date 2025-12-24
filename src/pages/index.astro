@@ -1,16 +1,471 @@
 ---
+import "../styles/global.css";
 
+const caseStudies = [
+  {
+    title: "GIZ - Global Energy Transformation",
+    role: "Digital Infrastructure Intern",
+    timeframe: "Sep 2025 - Present - Bonn, Germany",
+    stack: ["Airtable", "Power BI", "RBAC"],
+    bullets: [
+      "Migrated on-prem relational databases into Airtable to create centralized, governed program data.",
+      "Designed KPI systems and reporting cadences in Power BI to keep delivery teams aligned."
+    ]
+  },
+  {
+    title: "Uniklinik Koeln - Clinical BI & ML",
+    role: "Data Management Assistant",
+    timeframe: "Aug 2025 - Present - Bonn, Germany",
+    stack: ["Flask", "Plotly", "Python", "LLM/ML"],
+    bullets: [
+      "Curated large-scale clinical datasets with statistical checks to make them research- and reporting-ready.",
+      "Built ~3 interactive BI dashboards with predictive analytics; experimented with 5+ ML/LLM models to surface explainable insights."
+    ]
+  },
+  {
+    title: "Volvo Cars - Connected Vehicle Analytics",
+    role: "Cloud Data Engineer",
+    timeframe: "Consulting - Remote",
+    stack: ["Azure ADF", "Databricks/Fabric", "PySpark"],
+    bullets: [
+      "Unified telemetry and service datasets to enable predictive maintenance and supply-chain intelligence.",
+      "Automated ingestion with scheduled ADF pipelines (latency down ~40%) and tuned PySpark jobs (query speed up ~35%)."
+    ]
+  },
+  {
+    title: "Federated Co-operatives Limited (FCL) - Retail EDW",
+    role: "Informatica Developer",
+    timeframe: "Consulting - Remote",
+    stack: ["Informatica", "Teradata", "SQL"],
+    bullets: [
+      "Delivered 30+ ETL workflows and optimized 15+ SQL reports, trimming runtimes by ~30% for always-on dashboards.",
+      "Maintained data-quality SLAs and incident response (incl. cyber event support) across Finance, Logistics, Marketing."
+    ]
+  }
+];
+
+const skills = [
+  {
+    title: "Data Platforms",
+    items: [
+      "Azure: Databricks, Data Factory, ADLS, Fabric",
+      "AWS: S3, Glue, Kinesis, Lambda",
+      "Teradata, Snowflake, SQL Server, PostgreSQL, MySQL"
+    ]
+  },
+  {
+    title: "Pipelines & Orchestration",
+    items: [
+      "Airflow, ADF, Informatica, SSIS; ELT/ETL across landing -> staging -> core -> semantic layers",
+      "Observability, SLAs, retries/alerts, RBAC and governance baked into delivery"
+    ]
+  },
+  {
+    title: "Languages & Analytics",
+    items: [
+      "Python, SQL (PL/SQL, T-SQL), Java, Shell",
+      "PySpark, Pandas, NumPy, scikit-learn; data quality and validation patterns",
+      "Regex and profiling to harden ingestion"
+    ]
+  },
+  {
+    title: "DevOps & Delivery",
+    items: [
+      "Terraform, Azure DevOps, Jenkins, Git, CI/CD (runbooks, SOPs, release hygiene)",
+      "Power BI, Flask/Plotly dashboards for stakeholders"
+    ]
+  }
+];
+
+const experience = [
+  {
+    role: "Digital Infrastructure Intern",
+    org: "GIZ (Global Energy Transformation)",
+    timeframe: "Sep 2025 - Present - Bonn (On-site)",
+    impact: "Centralizing program data in Airtable with governed access and KPI/reporting systems in Power BI."
+  },
+  {
+    role: "Data Management Assistant",
+    org: "Institut fuer Biomedizinische Informatik, Uniklinik Koeln",
+    timeframe: "Aug 2025 - Present - Bonn (On-site)",
+    impact: "Curating clinical datasets, building interactive BI dashboards, and trialing ML/LLM models for explainable insights."
+  },
+  {
+    role: "Data Engineer",
+    org: "Teradata (NA & EU clients)",
+    timeframe: "Sep 2022 - May 2025 - Remote",
+    impact: "15+ production pipelines, governance/RBAC, and CI/CD (Terraform, Jenkins/Azure DevOps) reducing deployment issues ~40%."
+  }
+];
+
+const services = [
+  {
+    title: "Data platform audit & hardening",
+    detail: "Review data models, lineage, and orchestration; tune SLAs, alerts, and access to reduce risk."
+  },
+  {
+    title: "Cloud & lakehouse builds",
+    detail: "Design ingestion and semantic layers on Azure/AWS; standardize ELT patterns for analytics and ML."
+  },
+  {
+    title: "BI & self-service enablement",
+    detail: "Instrument KPI stacks, improve refresh cycles, and launch dashboards that decision-makers trust."
+  }
+];
+
+const education = [
+  {
+    title: "MSc Computer Science",
+    place: "University of Bonn",
+    timeframe: "Apr 2025 - In Progress",
+    detail: "Spatiotemporal Data Analysis, NLP, IT Security."
+  },
+  {
+    title: "BSc Computer Science",
+    place: "FAST NUCES, Islamabad",
+    timeframe: "Aug 2018 - Jun 2022",
+    detail: "Dean's List of Honors; focused on data systems and analytics."
+  }
+];
+
+const contactLinks = [
+  { label: "Email", value: "rizwanhaidar@outlook.com", href: "mailto:rizwanhaidar@outlook.com" },
+  { label: "Phone", value: "+49 1575 6154688", href: "tel:+4915756154688" },
+  { label: "LinkedIn", value: "linkedin.com/in/rizwanhaidar", href: "https://www.linkedin.com/in/rizwanhaidar/" },
+  { label: "GitHub", value: "github.com/rizwanhaidar", href: "https://github.com/rizwanhaidar" },
+  { label: "Location", value: "Bonn, Germany" }
+];
+
+const icons = {
+  Email:
+    '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" /><path d="M4 7l7.6 5a2 2 0 0 0 2.2 0L21 7" /></svg>',
+  Phone:
+    '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 5.2a2 2 0 0 1 2-1.7h2.3c.4 0 .8.3 1 .7l1.2 3a1 1 0 0 1-.5 1.2l-1.7.9c1 2.2 2.7 3.9 4.9 4.9l.9-1.7a1 1 0 0 1 1.2-.5l3 1.2c.4.2.7.6.7 1v2.4a2 2 0 0 1-1.7 2c-2.6.3-5.7-.7-8.8-3.8-3-3.1-4.1-6.2-3.9-8.8Z" /></svg>',
+  LinkedIn:
+    '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="currentColor"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Zm-11 15H6.5V10H9Zm-1.2-9a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6ZM18 18h-2.5v-4.3c0-1-.7-1.6-1.5-1.6s-1.5.6-1.5 1.6V18H10v-8h2.5v1c.5-.8 1.4-1.2 2.5-1.2 1.7 0 3 1.1 3 3.4Z"/></svg>',
+  GitHub:
+    '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 19.5c-4 1.3-4-2.2-6-2.5m12 4v-3.2a3.6 3.6 0 0 0-1-2.8c3 0 6-2 6-5.8 0-1.2-.4-2.3-1.1-3.2.3-1 .3-2.1 0-3.1 0 0-1 0-3.2 1.3a10.7 10.7 0 0 0-5.4 0C7 1.9 6 1.9 6 1.9a6.2 6.2 0 0 0 0 3.2 5.7 5.7 0 0 0-1 3.2c0 3.8 3 5.8 6 5.8-.4.4-.7 1-.8 1.6V21" /></svg>',
+  Location:
+    '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s6-5.2 6-10a6 6 0 0 0-12 0c0 4.8 6 10 6 10Z" /><circle cx="12" cy="11" r="2.5" /></svg>',
+  Default: '<svg viewBox="0 0 24 24" class="h-5 w-5 text-[var(--accent)]" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8" /></svg>'
+};
+
+const logos = [
+  { name: "GIZ", src: "/logos/giz.png", tag: "Energy consulting" },
+  { name: "Uniklinikum Koeln", src: "/logos/uniklinik.png", tag: "Healthcare" },
+  { name: "Teradata", src: "/logos/Teradata.png", tag: "Data engineering" },
+  { name: "Volvo Cars", src: "/logos/volvo.svg", tag: "Automotive" },
+  { name: "Federated Co-operatives Limited", src: "/logos/fcl.png", tag: "Retail/Supply" },
+  { name: "Upwork", src: "/logos/upwork.svg", tag: "Consulting" }
+];
+const marqueeLogos = [...logos, ...logos];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Rizwan Haidar | Data Engineer & Analytics Consultant</title>
+    <meta
+      name="description"
+      content="Rizwan Haidar - Data Engineer & Analytics Consultant crafting reliable data platforms, pipelines, and BI for teams in Germany and beyond."
+    />
+  </head>
+  <body class="bg-[var(--bg)] text-[var(--ink)]">
+    <div class="absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-r from-[var(--accent)]/18 via-transparent to-[var(--accent-soft)]/40 blur-2xl"></div>
+    <main id="top" class="relative mx-auto flex max-w-7xl flex-col gap-16 px-5 pb-16 pt-4 sm:px-7 md:px-10 md:pb-20 md:pt-6">
+      <nav class="sticky top-4 z-20 flex items-center justify-between rounded-full border border-white/80 bg-white/90 px-5 py-3 shadow-lg shadow-slate-900/5 backdrop-blur-md">
+        <a href="#top" class="flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+          Rizwan Haidar
+          <span class="text-[var(--muted)]">/ Data Engineering</span>
+        </a>
+        <div class="flex items-center gap-2 text-sm text-[var(--muted)]">
+          <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#case-studies">Case studies</a>
+          <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#skills">Skills</a>
+          <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#experience">Experience</a>
+          <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#contact">Contact</a>
+          <a
+            class="rounded-full bg-[var(--accent)] px-4 py-2 font-semibold text-white shadow-md shadow-[var(--accent)]/25 transition hover:-translate-y-0.5 hover:bg-[var(--accent)]"
+            href="/RizwanHaidar_CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CV
+          </a>
+        </div>
+      </nav>
+
+      <header class="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-10">
+        <div class="flex flex-col gap-6">
+          <div class="eyebrow">Data Engineering - Analytics - BI</div>
+          <div class="flex flex-col gap-4">
+            <h1 class="text-3xl font-semibold leading-tight text-[var(--accent)] md:text-4xl">Rizwan Haidar</h1>
+            <p class="text-lg font-medium text-[var(--ink)] md:text-xl">Data Engineer & Analytics Consultant</p>
+            <p class="text-base leading-relaxed text-[var(--muted)]">
+              I build reliable data platforms, pipelines, and BI layers for teams in Germany and across EMEA/NA. ~3 years integrating
+              heterogeneous datasets, enforcing governance, and translating analysis into operational decisions.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              class="pill border-transparent bg-[var(--accent)]/90 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[var(--accent)]/25 transition hover:-translate-y-0.5 hover:bg-[var(--accent)]"
+              href="/RizwanHaidar_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download CV
+            </a>
+            <a
+              class="pill px-4 py-2 font-semibold text-[var(--ink)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-white"
+              href="https://www.linkedin.com/in/rizwanhaidar/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              class="pill px-4 py-2 font-semibold text-[var(--ink)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-white"
+              href="mailto:rizwanhaidar@outlook.com"
+            >
+              Book a call
+            </a>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
+            <span class="pill">Bonn, Germany</span>
+            <span class="pill">Available for mid-level data engineering consulting & development</span>
+            <span class="pill">Speaks data modeling, orchestration, BI, and ML/LLM experiments</span>
+          </div>
+        </div>
+        <div class="relative w-full max-w-[320px] justify-self-end md:max-w-[360px]">
+          <div class="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-[var(--accent-soft)]/40 blur-3xl"></div>
+          <div class="absolute -right-6 bottom-6 h-20 w-20 rounded-full bg-[var(--accent)]/20 blur-3xl"></div>
+          <div class="aspect-square overflow-hidden rounded-full border-4 border-white/90 shadow-xl shadow-slate-900/15">
+            <img src="/headshot.png" alt="Portrait of Rizwan Haidar" class="h-full w-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </header>
+
+      <section class="marquee relative" style="--marquee-duration: 36s">
+        <div class="flex flex-col gap-1 px-2 py-2 sm:flex-row sm:items-center sm:gap-4">
+          <div class="flex flex-col gap-0.5 text-[var(--muted)]">
+            <span class="text-[12px] font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Helping global brands scale data infrastructure</span>
+            <div class="flex items-center gap-2" style="font-size: clamp(13px, 1.9vw, 15px); font-weight: 600; line-height: 1.3;">
+              <span class="flex h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+              <span class="whitespace-nowrap text-[var(--ink)]">Selected clients & collaborators</span>
+            </div>
+          </div>
+          <div class="relative w-full max-w-6xl overflow-hidden">
+            <div class="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[var(--bg)]/70 via-[var(--bg)]/20 to-transparent"></div>
+            <div class="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[var(--bg)]/70 via-[var(--bg)]/20 to-transparent"></div>
+              <div class="marquee-track px-2 pb-2 pt-2">
+                {marqueeLogos.map((logo) => (
+                  <a
+                  class={`logo-item ${logo.name === "Volvo Cars" ? "logo-item-volvo" : ""} focus:outline-none`}
+                  href="#case-studies"
+                  aria-label={logo.name}
+                  title={`${logo.name} • ${logo.tag || "Role & outcomes"}`}
+                >
+                  <div class="flex flex-col items-center gap-1.5">
+                    {logo.src ? (
+                      <img src={logo.src} alt={`${logo.name} logo`} class="logo-img w-full object-contain" loading="lazy" />
+                    ) : (
+                      <span class="logo-fallback flex items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-[var(--ink)]" aria-label={logo.name}>
+                        {logo.name}
+                      </span>
+                    )}
+                    {logo.tag && (
+                      <span class="rounded-full border border-slate-200 bg-white/80 px-2 py-0.5 text-[11px] font-semibold text-[var(--muted)] shadow-sm">
+                        {logo.tag}
+                      </span>
+                    )}
+                  </div>
+                  {logo.tag && <span class="logo-tooltip">{logo.tag}</span>}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-6" id="case-studies">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="eyebrow">Case studies</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Recent impact</h2>
+            <p class="text-[var(--muted)]">Selected work across public sector, healthcare, automotive, and retail.</p>
+          </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          {caseStudies.map((item) => (
+            <article class="card flex flex-col gap-4 p-6" aria-label={item.title}>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-[var(--accent)]">{item.role}</p>
+                  <h3 class="mt-1 text-xl font-semibold leading-tight">{item.title}</h3>
+                  <p class="text-sm text-[var(--muted)]">{item.timeframe}</p>
+                </div>
+                <div class="flex flex-wrap justify-end gap-2">
+                  {item.stack.map((tag) => (
+                    <span class="pill text-[13px]" aria-label={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <ul class="flex flex-col gap-2 text-[var(--muted)]">
+                {item.bullets.map((bullet) => (
+                  <li class="flex gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]/70"></span>
+                    <span class="leading-relaxed">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-6" id="skills">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Skills & tools</h2>
+            <p class="text-[var(--muted)]">Pragmatic delivery across data platforms, orchestration, analytics, and DevOps.</p>
+          </div>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {skills.map((group) => (
+            <div class="card flex flex-col gap-3 p-5" aria-label={group.title}>
+              <h3 class="text-lg font-semibold text-[var(--ink)]">{group.title}</h3>
+              <ul class="flex flex-col gap-2 text-[var(--muted)]">
+                {group.items.map((item) => (
+                  <li class="flex gap-2">
+                    <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--accent)]/80"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-6" id="experience">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Roles & outcomes</h2>
+            <p class="text-[var(--muted)]">Delivering for public sector, healthcare, automotive, and retail teams.</p>
+          </div>
+        </div>
+        <div class="card divide-y divide-slate-200/80 p-4">
+          {experience.map((item) => (
+            <div class="flex flex-col gap-2 px-2 py-4 md:flex-row md:items-start md:gap-6">
+              <div class="md:w-2/5">
+                <p class="text-sm font-semibold text-[var(--accent)]">{item.role}</p>
+                <p class="text-base font-semibold text-[var(--ink)]">{item.org}</p>
+                <p class="text-sm text-[var(--muted)]">{item.timeframe}</p>
+              </div>
+              <p class="md:w-3/5 text-[var(--muted)] leading-relaxed">{item.impact}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="eyebrow">Consulting</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">How I can help</h2>
+            <p class="text-[var(--muted)]">Short engagements or longer builds tailored to your data roadmap.</p>
+          </div>
+        </div>
+        <div class="grid gap-4 md:grid-cols-3">
+          {services.map((item) => (
+            <div class="card flex flex-col gap-3 p-5">
+              <h3 class="text-lg font-semibold text-[var(--ink)]">{item.title}</h3>
+              <p class="text-[var(--muted)] leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="eyebrow">Education</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Academic track</h2>
+            <p class="text-[var(--muted)]">Grounded in computer science with a focus on data systems.</p>
+          </div>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {education.map((item) => (
+            <div class="card flex flex-col gap-2 p-5">
+              <h3 class="text-lg font-semibold text-[var(--ink)]">{item.title}</h3>
+              <p class="text-[var(--muted)]">{item.place}</p>
+              <p class="text-sm text-[var(--muted)]">{item.timeframe}</p>
+              <p class="text-[var(--muted)] leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+          <div class="card p-5">
+            <h3 class="text-lg font-semibold text-[var(--ink)]">Certifications & awards</h3>
+            <ul class="mt-3 flex flex-col gap-2 text-[var(--muted)]">
+              <li>Teradata Vantage Data Engineering & Associate</li>
+              <li>AWS Cloud Practitioner</li>
+              <li>Microsoft Azure Cloud & Data Fundamentals (AZ-900, DP-900)</li>
+              <li>Teradata Spot Awards (Mar 2024, May/Sep 2023, Mar 2025) & Quarterly Excellence (Q1 2024)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card flex flex-col gap-6 p-6" id="contact">
+        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Let's talk data</h2>
+            <p class="text-[var(--muted)]">Reach out for builds, audits, or a quick advisory call.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              class="pill border-transparent bg-[var(--accent)]/90 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[var(--accent)]/25 transition hover:-translate-y-0.5 hover:bg-[var(--accent)]"
+              href="mailto:rizwanhaidar@outlook.com"
+            >
+              Email me
+            </a>
+            <a
+              class="pill px-4 py-2 font-semibold text-[var(--ink)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:bg-white"
+              href="https://www.linkedin.com/in/rizwanhaidar/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Schedule time
+            </a>
+          </div>
+        </div>
+        <div class="grid gap-3 md:grid-cols-3">
+          {contactLinks.map((item) => (
+            <div class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 shadow-sm">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent)]/10" set:html={icons[item.label] ?? icons.Default}></div>
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold text-[var(--ink)]">{item.label}</p>
+                {item.href ? (
+                  <a
+                    class="text-[var(--muted)] underline decoration-[var(--accent)]/40 decoration-2 underline-offset-4 hover:text-[var(--accent)]"
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p class="text-[var(--muted)]">{item.value}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

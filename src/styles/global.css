@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #f7f7f2;
+    --ink: #0f172a;
+    --muted: #475569;
+    --accent: #0b3b60;
+    --accent-soft: #7fd1c8;
+  }
+
+  body {
+    font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(140deg, #f4f8ff 0%, #e6f4ff 35%, #e9fff6 75%, #f8fbff 100%);
+    color: var(--ink);
+    @apply antialiased;
+  }
+
+  ::selection {
+    background: #c8e7ff;
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1 text-sm text-[var(--muted)] shadow-sm;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)];
+  }
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+
+.marquee-track {
+  display: flex;
+  gap: clamp(22px, 3vw, 32px);
+  animation: marquee var(--marquee-duration, 36s) linear infinite;
+  will-change: transform;
+  align-items: center;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+  .logo-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    height: clamp(64px, 6vw, 78px);
+    padding: 10px 12px;
+    gap: 6px;
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(127, 209, 200, 0.18), rgba(234, 236, 255, 0.42));
+    border: 1px solid rgba(208, 215, 230, 0.9);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+.logo-img,
+.logo-fallback {
+    opacity: 0.72;
+    transition: opacity 160ms ease, transform 160ms ease, filter 160ms ease;
+  }
+
+.logo-img {
+  max-height: clamp(30px, 5vw, 40px);
+  max-width: 170px;
+  width: auto;
+  filter: saturate(60%) brightness(90%);
+  mix-blend-mode: normal;
+}
+
+.logo-fallback {
+  height: clamp(30px, 5vw, 40px);
+  width: clamp(30px, 5vw, 40px);
+  }
+
+  .logo-item:focus-within .logo-img,
+  .logo-item:hover .logo-img,
+  .logo-item:focus-within .logo-fallback,
+  .logo-item:hover .logo-fallback {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: none;
+  }
+
+  .logo-tooltip {
+    position: absolute;
+    bottom: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+
+  .logo-item:hover .logo-tooltip,
+  .logo-item:focus-within .logo-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .marquee-track {
+    animation-duration: 36s;
+    gap: clamp(18px, 4vw, 26px);
+  }
+
+  .logo-item {
+    min-width: 130px;
+    height: clamp(56px, 12vw, 72px);
+  }
+
+  .logo-img {
+    max-height: 32px;
+  }
+}
+
+.logo-item-volvo .logo-img {
+  max-height: clamp(34px, 6vw, 48px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
