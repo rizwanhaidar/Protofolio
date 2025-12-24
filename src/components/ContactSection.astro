@@ -1,0 +1,65 @@
+---
+import { contactLinks } from '../data/contact';
+---
+
+<section class="card flex flex-col gap-6 p-6" id="contact">
+  <div class="flex flex-col gap-2">
+    <p class="eyebrow">Get in Touch</p>
+    <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Let's Connect</h2>
+    <p class="text-[var(--muted)]">Open to full-time Data Engineering and Analytics roles in Germany and EU</p>
+  </div>
+  <div class="grid gap-3 md:grid-cols-2">
+    {contactLinks.map((item) => (
+      <div class="contact-card">
+        <p class="text-sm font-semibold text-[var(--ink)]">{item.label}</p>
+        {item.copy ? (
+          <button
+            class="contact-link contact-copy"
+            data-copy-text={item.value}
+            aria-label={`Copy ${item.label}`}
+          >
+            {item.value} <span aria-hidden="true">Copy</span>
+          </button>
+        ) : item.href ? (
+          <a
+            class="contact-link"
+            href={item.href}
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          >
+            {item.value}
+          </a>
+        ) : (
+          <p class="text-[var(--muted)]">{item.value}</p>
+        )}
+      </div>
+    ))}
+  </div>
+  <div class="pt-2 border-t border-slate-200/60">
+    <p class="text-xs text-[var(--muted)] text-center">
+      🇪🇺 EU Work Authorization • Bonn-based • Open to relocation within Germany/EU
+    </p>
+  </div>
+</section>
+
+<script>
+  // Handle copy to clipboard functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.contact-copy');
+    
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const textToCopy = button.getAttribute('data-copy-text');
+        if (!textToCopy) return;
+        
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          alert('Email copied to clipboard!');
+        } catch (err) {
+          console.error('Failed to copy text:', err);
+          alert('Failed to copy email. Please try again.');
+        }
+      });
+    });
+  });
+</script>

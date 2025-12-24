@@ -1,0 +1,44 @@
+---
+import { education } from '../data/education';
+---
+
+<section class="flex flex-col gap-6">
+  <div class="flex items-center justify-between">
+    <div>
+      <p class="eyebrow">Education</p>
+      <h2 class="text-2xl font-semibold text-[var(--ink)] md:text-3xl">Academic track</h2>
+      <p class="text-[var(--muted)]">Grounded in computer science with a focus on data systems.</p>
+    </div>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2">
+    {education.map((item) => (
+      <article class="card flex flex-col gap-2 p-5">
+        <h3 class="text-lg font-semibold text-[var(--ink)]">{item.title}</h3>
+        <p class="text-[var(--muted)]">{item.place}</p>
+        <p class="text-sm text-[var(--muted)]">{item.timeframe}</p>
+        <p class="text-[var(--muted)] leading-relaxed">{item.detail}</p>
+      </article>
+    ))}
+    <article class="card p-5">
+      <h3 class="text-lg font-semibold text-[var(--ink)]">Certifications & awards</h3>
+      <ul class="mt-3 flex flex-col gap-2 text-[var(--muted)]">
+        <li class="flex gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--accent)]/80" aria-hidden="true"></span>
+          <span>Teradata Vantage Data Engineering & Associate</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--accent)]/80" aria-hidden="true"></span>
+          <span>AWS Cloud Practitioner</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--accent)]/80" aria-hidden="true"></span>
+          <span>Microsoft Azure Cloud & Data Fundamentals (AZ-900, DP-900)</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--accent)]/80" aria-hidden="true"></span>
+          <span>Teradata Spot Awards (Mar 2024, May/Sep 2023, Mar 2025) & Quarterly Excellence (Q1 2024)</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>

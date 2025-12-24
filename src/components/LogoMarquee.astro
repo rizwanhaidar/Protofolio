@@ -1,0 +1,46 @@
+---
+import { logos } from '../data/logos';
+
+const marqueeLogos = [...logos, ...logos];
+---
+
+<section class="marquee-section relative py-3 md:py-4">
+  <div class="text-center max-w-2xl mx-auto mb-2.5">
+    <p class="eyebrow justify-center text-[9px] mb-1">TRUSTED BY</p>
+    <h2 class="text-xl md:text-2xl font-bold text-[var(--ink)] mb-1.5 leading-tight">
+      Fortune 500 & Global Scale-ups
+    </h2>
+    <p class="text-sm text-[var(--muted)] leading-relaxed">
+      Data infrastructure trusted by organizations transforming energy, healthcare, automotive, and commerce across EMEA and North America.
+    </p>
+  </div>
+  <div class="marquee-premium relative" style="--marquee-duration: 45s">
+    <div class="relative w-full overflow-hidden">
+      <div class="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/30 to-transparent z-10" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[var(--bg)] via-[var(--bg)]/30 to-transparent z-10" aria-hidden="true"></div>
+      <div class="marquee-track-premium px-2 py-3">
+        {marqueeLogos.map((logo) => (
+          <a
+            class="logo-premium focus:outline-none"
+            href="#case-studies"
+            aria-label={`${logo.name} - ${logo.tag}`}
+            title={logo.tag}
+          >
+            {logo.src ? (
+              <img 
+                src={`/${logo.src}`} 
+                alt={`${logo.name} logo`} 
+                class="logo-img-premium" 
+                loading="lazy"
+                width="110"
+                height="40"
+              />
+            ) : (
+              <span class="logo-fallback-premium">{logo.name.slice(0, 2).toUpperCase()}</span>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

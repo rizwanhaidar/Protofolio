@@ -1,0 +1,31 @@
+---
+import { skills } from '../data/skills';
+---
+
+<section class="flex flex-col gap-6" id="skills">
+  <div>
+    <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">Technical Skills</p>
+    <h2 class="text-2xl font-bold text-slate-900 md:text-3xl mb-2">Skills & Technologies</h2>
+    <p class="text-slate-600">Hands-on experience with modern data engineering tools and cloud platforms</p>
+  </div>
+  
+  <div class="grid gap-5 md:grid-cols-2">
+    {skills.map((group) => (
+      <article class="bg-white rounded-xl border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all" aria-labelledby={`skill-${group.title.replace(/\s+/g, '-').toLowerCase()}`}>
+        <div class="bg-gradient-to-r from-blue-50 to-slate-50 p-4 border-b border-slate-200">
+          <h3 id={`skill-${group.title.replace(/\s+/g, '-').toLowerCase()}`} class="text-base font-bold text-slate-900">{group.title}</h3>
+        </div>
+        <div class="p-5">
+          <ul class="flex flex-col gap-3 text-sm text-slate-700">
+            {group.items.map((item) => (
+              <li class="flex gap-3">
+                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 flex-shrink-0" aria-hidden="true"></span>
+                <span class="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

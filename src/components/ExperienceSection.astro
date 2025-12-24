@@ -1,0 +1,41 @@
+---
+import { experience } from '../data/experience';
+---
+
+<section class="flex flex-col gap-6" id="experience">
+  <div>
+    <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">Professional Experience</p>
+    <h2 class="text-2xl font-bold text-slate-900 md:text-3xl mb-2">Career Timeline</h2>
+    <p class="text-slate-600">3 years delivering data engineering solutions across consulting, healthcare, and public sector</p>
+  </div>
+  
+  <div class="relative">
+    <!-- Timeline line -->
+    <div class="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-300 to-blue-100"></div>
+    
+    <div class="flex flex-col gap-6">
+      {experience.map((item, index) => (
+        <article class="relative pl-0 md:pl-16">
+          <!-- Timeline dot -->
+          <div class="hidden md:block absolute left-4 top-6 w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-md"></div>
+          
+          <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <h3 class="text-lg font-bold text-slate-900">{item.role}</h3>
+                  {index === 0 && (
+                    <span class="px-2.5 py-0.5 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Primary</span>
+                  )}
+                </div>
+                <p class="text-base font-semibold text-blue-600 mb-1">{item.org}</p>
+                <p class="text-sm text-slate-500 font-medium">{item.timeframe}</p>
+              </div>
+            </div>
+            <p class="text-slate-700 leading-relaxed">{item.impact}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

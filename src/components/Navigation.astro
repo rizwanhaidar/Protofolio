@@ -1,0 +1,25 @@
+---
+// Navigation component for sticky header
+---
+
+<nav class="sticky top-4 z-20 flex items-center justify-between rounded-full border border-white/80 bg-white/90 px-5 py-3 shadow-lg shadow-slate-900/5 backdrop-blur-md">
+  <a href="#top" class="flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+    Rizwan Haidar
+    <span class="text-[var(--muted)]">/ Data Engineer</span>
+  </a>
+  <div class="flex items-center gap-2 text-sm text-[var(--muted)]">
+    <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#experience">Experience</a>
+    <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#skills">Skills</a>
+    <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#case-studies">Projects</a>
+    <a class="px-3 py-2 font-semibold transition hover:text-[var(--accent)]" href="#contact">Contact</a>
+    <a
+      class="rounded-full bg-[var(--accent)] px-4 py-2 font-semibold text-white shadow-md shadow-[var(--accent)]/25 transition hover:-translate-y-0.5 hover:bg-[var(--accent)]"
+      href="/RizwanHaidar_CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download CV"
+    >
+      CV
+    </a>
+  </div>
+</nav>
