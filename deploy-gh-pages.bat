@@ -13,7 +13,7 @@ cd dist
 
 git init
 
-git remote add origin https://github.com/rizwanhaidar/Protofolio2.0.git
+git remote add origin https://github.com/rizwanhaidar/Protofolio.git
 
 git checkout -b gh-pages
 
@@ -21,4 +21,4 @@ git add .
 git commit -m "Deploy to GitHub Pages"
 git push -f origin gh-pages
 
-echo Deployment complete. Check your site at https://rizwanhaidar.github.io/Protofolio2.0
+echo Deployment complete. Check your site at https://rizwanhaidar.github.io/Protofolio
