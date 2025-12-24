@@ -28,7 +28,7 @@ const marqueeLogos = [...logos, ...logos];
           >
             {logo.src ? (
               <img 
-                src={`/${logo.src}`} 
+                src={`${import.meta.env.BASE_URL}/${logo.src}`} 
                 alt={`${logo.name} logo`} 
                 class="logo-img-premium" 
                 loading="lazy"

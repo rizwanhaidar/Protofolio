@@ -11,7 +11,7 @@ import { SITE_CONFIG } from '../config/site';
       <div class="flex-shrink-0 p-8 md:p-10 bg-white/80 backdrop-blur-sm border-r border-slate-200/60 flex flex-col items-center md:items-start justify-center">
         <div class="w-28 h-28 md:w-32 md:h-32 rounded-xl overflow-hidden border-2 border-slate-200 shadow-lg mb-4">
           <img
-            src="/headshot.png"
+            src={`${import.meta.env.BASE_URL}/headshot.png`}
             alt="Rizwan Haidar"
             class="w-full h-full object-cover"
             loading="eager"
@@ -77,7 +77,7 @@ import { SITE_CONFIG } from '../config/site';
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-3">
           <a
-            href="/RizwanHaidar_CV.pdf"
+            href={`${import.meta.env.BASE_URL}/RizwanHaidar_CV.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-all"
