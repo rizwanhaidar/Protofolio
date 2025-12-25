@@ -30,6 +30,13 @@ export interface Education {
   detail: string;
 }
 
+export interface Certification {
+  title: string;
+  issuer: string;
+  credlyUrl: string;
+  badgeImage: string;
+}
+
 export interface ContactLink {
   label: string;
   value: string;

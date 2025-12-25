@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     title: "GIZ - Energy Program Data Infrastructure",
-    role: "Digital Infrastructure Intern",
+    role: "Digital Infrastructure Working Student",
     timeframe: "2025 • Public Sector",
     stack: ["Airtable", "Power BI", "Cloud", "RBAC"],
     bullets: [
