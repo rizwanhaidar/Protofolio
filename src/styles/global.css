@@ -138,12 +138,14 @@
     max-width: 110px;
     max-height: 40px;
     object-fit: contain;
-    filter: grayscale(100%) brightness(0.8);
+    filter: grayscale(0%) brightness(1);
+    transition: transform 300ms ease, filter 300ms ease;
   }
 
   .logo-premium:hover .logo-img-premium,
   .logo-premium:focus-within .logo-img-premium {
-    filter: grayscale(0%) brightness(1);
+    filter: grayscale(0%) brightness(1.1);
+    transform: scale(1.05);
   }
 
   .logo-fallback-premium {
