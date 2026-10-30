@@ -4,6 +4,6 @@ const {name,logo}=Astro.props;
 // Names remain visible even if an image is unavailable. Restricted marks are
 // deliberately omitted until the owner supplies permission.
 const restricted=['Teradata','Toyota Financial Services','University of Bonn'];
-const asset=name==='Uniklinikum Köln'?'clinical-official.svg':name==='FAST NUCES'?'fast-symbol.png':name==='Volvo Cars'?'volvo-official.svg':restricted.includes(name)?null:logo;
+const asset=name==='Uniklinik Köln'?'clinical-official.svg':name==='FAST NUCES'?'fast-symbol.png':name==='Volvo Cars'?'volvo-official.svg':restricted.includes(name)?null:logo;
 ---
 <div class:list={['organization-mark',{'organization-mark--symbol':name==='FAST NUCES'}]}>{asset&&<img src={`${base}logos/${asset}`} alt={`${name} logo`} width="200" height="64"/>}<span>{name}</span></div>
