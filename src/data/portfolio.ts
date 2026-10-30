@@ -17,9 +17,9 @@ export const employers = [
   {
     "name": "Teradata",
     "sub": "Consulting practice · Enterprise data engineering",
-    "role": "Data Engineer",
+    "role": "Associate Data Engineer",
     "dates": "September 2022 – May 2025",
-    "location": "Remote · North American and European client engagements",
+    "location": "Remote · Full-time · North American and European client engagements",
     "mark": "TD",
     "logo": "Teradata.png",
     "stack": "Azure / AWS / Informatica / Teradata / PySpark / Terraform",
@@ -31,14 +31,14 @@ export const employers = [
     "name": "GIZ",
     "sub": "Deutsche Gesellschaft für Internationale Zusammenarbeit",
     "role": "Digital Infrastructure Intern",
-    "dates": "September 2025 – Present",
+    "dates": "September 2025 – March 2026",
     "location": "Bonn, Germany · On-site",
     "mark": "GIZ",
     "logo": "giz.png",
-    "stack": "Airtable / Power BI / Relational databases / RBAC",
-    "text": "Centralized data foundations and KPI reporting for Global Energy Transformation programs, connecting international development with energy-sector data infrastructure.",
+    "stack": "Microsoft Lists / SharePoint / Teams / Excel",
+    "text": "Supported GET.transform’s digital infrastructure for international energy-sector cooperation: Excel-to-Microsoft Lists migration, SharePoint and Teams structures, process mapping and colleague onboarding.",
     "slug": "giz",
-    "metric": "International energy programs"
+    "metric": "GET.transform · International energy programs"
   },
   {
     "name": "Uniklinikum Köln",
@@ -204,26 +204,31 @@ export const studies: Study[] = [
       "Analytics"
     ],
     "stack": [
-      "Airtable",
-      "Power BI",
-      "RBAC"
+      "Microsoft Lists",
+      "SharePoint",
+      "Teams",
+      "Excel"
     ],
     "logo": "giz.png",
-    "intro": "Bringing program data, access controls and performance reporting into a common foundation.",
-    "metric": "Global Energy Transformation",
-    "source": "Public CV, GIZ experience.",
+    "intro": "Migrating project-management data and improving collaborative digital infrastructure for GET.transform.",
+    "metric": "GET.transform",
+    "source": "Employer reference dated 7 March 2026 verifies the completed internship (8 September 2025–7 March 2026) and GET.transform activities. Earlier CV-specific claims are identified separately. The confidential reference is not distributed.",
     "sections": [
       {
         "title": "Program context",
-        "text": "International development and energy transformation programs need shared data foundations and consistent performance reporting across stakeholders."
+        "text": "GET.transform is a European multi-donor programme supporting public-sector partners in power-sector transformation. The internship connected international development and energy-sector work with shared project-management infrastructure."
       },
       {
-        "title": "My contribution",
-        "text": "Migrating on-premises relational databases into Airtable, including interfaces and role-based access controls. Designing KPI systems and reporting cadences in Power BI."
+        "title": "Verified contribution",
+        "text": "Migrated project-management data from Excel to Microsoft Lists. Helped structure SharePoint and Microsoft Teams connections, maintained SharePoint pages and developed process flows to inform system requirements. Onboarded colleagues through virtual and in-person training and produced a user manual."
       },
       {
         "title": "Approach & outcome",
-        "text": "The documented work combines data centralization, controlled access and recurring program monitoring. It is described as ongoing work; no numerical efficiency gain or completed migration total is claimed."
+        "text": "The completed internship delivered a project-data migration, colleague onboarding and process documentation. The reference also confirms project status updates and collaboration with an international team. No numerical efficiency gain is claimed."
+      },
+      {
+        "title": "Earlier CV context",
+        "text": "The earlier CV additionally describes Airtable migration, role-based access controls and Power BI KPI reporting. These are CV-reported activities and are not independently corroborated by the employer reference."
       },
       {
         "title": "Technical perspective",

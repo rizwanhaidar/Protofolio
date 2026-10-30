@@ -1,0 +1,6 @@
+---
+import {base,studies} from '../data/portfolio';
+const {mode}=Astro.props;
+const selected=mode==='academic'?['graph-aml','xaihate']:['toyota','volvo'];
+---
+<section class="section featured-selection" aria-labelledby="featured-heading"><div class="section-heading"><div><p class="eyebrow">SELECTED {mode==='academic'?'RESEARCH':'WORK'}</p><h2 id="featured-heading">{mode==='academic'?'Evidence. Including the limits.':'Reliable systems. Real contexts.'}</h2></div><a class="text-link" href="#work">Explore all case studies ↓</a></div><div class="featured-grid">{selected.map(slug=>{const s=studies.find(x=>x.slug===slug)!;return <article><p class="eyebrow">{s.org}</p><p class="relationship">{s.relationship}</p><h3><a href={`${base}work/${slug}/`}>{s.title}</a></h3><p>{s.intro}</p><strong class="feature-metric">{s.metric}</strong><a class="text-link" href={`${base}work/${slug}/`}>Explore {slug==='xaihate'?'the bachelor’s thesis':'the case study'} ↗</a></article>})}</div></section>
