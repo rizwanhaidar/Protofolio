@@ -1,9 +1,17 @@
 ---
 import {base} from '../data/portfolio';
-const {name,logo}=Astro.props;
-// Names remain visible even if an image is unavailable. Restricted marks are
-// deliberately omitted until the owner supplies permission.
-const restricted=['Teradata','Toyota Financial Services','University of Bonn'];
-const asset=name==='Uniklinik Köln'?'clinical-official.svg':name==='FAST NUCES'?'fast-symbol.png':name==='Volvo Cars'?'volvo-official.svg':restricted.includes(name)?null:logo;
+const {name}=Astro.props;
+// One logo per organization, all trimmed and shown in the same tile size.
+const logos:Record<string,string>={
+  'Toyota Financial Services':'toyota-logo.png',
+  'Teradata':'teradata-logo.png',
+  'Volvo Cars':'volvo-logo.png',
+  'Federated Co-operatives':'fcl-logo.png',
+  'GIZ':'giz-logo.png',
+  'Uniklinik Köln':'uniklinik-logo.png',
+  'University of Bonn':'uni-bonn-logo.png',
+  'FAST NUCES':'fast-symbol.png'
+};
+const asset=logos[name];
 ---
-<div class:list={['organization-mark',{'organization-mark--symbol':name==='FAST NUCES'}]}>{asset&&<img src={`${base}logos/${asset}`} alt={`${name} logo`} width="200" height="64"/>}<span>{name}</span></div>
+<div class="organization-mark">{asset&&<img src={`${base}logos/${asset}`} alt={`${name} logo`} width="200" height="72"/>}<span>{name}</span></div>
