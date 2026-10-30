@@ -1,0 +1,10 @@
+---
+const {slug}=Astro.props;
+const charts={
+'nli':{title:'Generalization beyond SNLI',label:'Accuracy (%) · higher is better',caption:'Team report: SNLI in-domain test versus MultiNLI transfer evaluation. Different evaluation domains; this is not a controlled estimate of one causal factor.',columns:['Model','SNLI','MultiNLI'],rows:[['BERT',91.04,74.31],['DeBERTa',90.30,70.83],['Custom transformer',80.84,44.91]]},
+'polarization':{title:'Monolingual polarization detection',label:'Macro F1 · higher is better',caption:'Team report, Table 2. Separate English and Urdu evaluations; language scores are not directly comparable measures of intrinsic task difficulty.',columns:['Model','English','Urdu'],rows:[['RemBERT',.4615,.7630],['XLM-R',.3608,.7400]]},
+'graph-aml':{title:'Feature reconstruction did not improve this baseline',label:'Illicit-class F1 (%) · mean ± reported variability',caption:'Rizwan’s Multi-GIN+EU reproduction and FRAD-B partial reconstruction. These results do not establish a gain. Team FraudGT experiments use a separate approach and are described below.',columns:['Experiment','F1','Reported variability'],rows:[['Multi-GIN+EU',59.9,7.1],['FRAD-B',54.07,10.7]]}
+};
+const c=charts[slug as keyof typeof charts];
+---
+{c&&<figure class="results-figure"><p class="eyebrow">EXPERIMENTAL EVIDENCE</p><h2>{c.title}</h2><p>{c.label}</p><div class="result-bars" aria-hidden="true">{c.rows.map(r=><div><span>{r[0]}</span><div class="bar-track"><div class="bar" style={`width:${Number(r[1])*(slug==='polarization'?100:1)}%`}></div></div><strong>{r[1]}{slug==='graph-aml'?` ± ${r[2]}`:''}</strong></div>)}</div><table><caption class="sr-only">Complete numeric values for the chart</caption><thead><tr>{c.columns.map(x=><th scope="col">{x}</th>)}</tr></thead><tbody>{c.rows.map(r=><tr>{r.map((x,i)=>i===0?<th scope="row">{x}</th>:<td>{x}</td>)}</tr>)}</tbody></table><figcaption>{c.caption} The bars show {c.columns[1]} only; the table preserves all values.</figcaption></figure>}
