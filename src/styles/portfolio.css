@@ -559,3 +559,10 @@ a,button {transition:color var(--duration),background-color var(--duration)}
   .engagements tr {display:grid;grid-template-columns:1fr;padding:10px 0;border-top:1px solid var(--line)}
   .engagements th,.engagements td {border:0;padding:2px 0}
 }
+
+.hero-facts {list-style:none;padding:0;margin:16px 0 0;display:grid;gap:6px}
+.hero-facts li {font-size:15px;line-height:1.6;color:var(--ink);max-width:62ch}
+.employer-points {margin:0 0 16px;padding-left:18px;display:grid;gap:6px}
+.employer-points li {font-size:15px;line-height:1.6;color:var(--muted);max-width:70ch}
+.skills-line {font-size:15px;line-height:1.8;color:var(--ink);max-width:90ch;margin:0 0 32px}
+.markets {padding-top:0}

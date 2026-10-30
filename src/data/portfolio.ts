@@ -1,7 +1,7 @@
 export const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 export type Study = { slug:string; title:string; org:string; relationship:string; mode:'professional'|'academic'; domains:string[]; stack:string[]; intro:string; metric:string; logo?:string; sections:{title:string; text:string}[]; flow?:string[]; related?:string };
 
-export type Employer = { name:string; sub:string; role:string; dates:string; location:string; logo:string; stack:string; text:string; metric:string; links:{label:string; slug:string}[]; engagements?:{period:string; client:string; role:string; highlight:string}[] };
+export type Employer = { name:string; sub:string; role:string; dates:string; location:string; logo:string; stack:string; points:string[]; metric:string; links:{label:string; slug:string}[]; engagements?:{period:string; client:string; role:string; highlight:string}[] };
 
 // Reverse-chronological. Titles, dates and locations follow the employer documents.
 export const employers: Employer[] = [
@@ -13,8 +13,13 @@ export const employers: Employer[] = [
     location: 'Cologne, Germany · Hybrid',
     logo: '',
     stack: 'Snowflake / SQL / Python / ETL / Reconciliation / Dashboards',
-    text: 'I automate the monthly and quarterly audit-critical reporting extracts (CO2 and portfolio figures per market) that governance, risk and compliance managers use across 9 markets, and integrated macroeconomic factors into risk reporting. I also migrate legacy data into the Snowflake warehouse with reconciliation checks, and built a cost-analysis dashboard for the data tools the team uses.',
-    metric: '9 markets · monthly & quarterly reporting',
+    points: [
+      'Automate monthly and quarterly audit-critical reporting extracts (CO2 and portfolio figures per market) for governance, risk and compliance managers across 9 markets.',
+      'Integrated macroeconomic factors into risk reporting.',
+      'Migrate legacy data into the Snowflake warehouse through 5+ ETL pipelines with count-and-balance reconciliation checks.',
+      'Built a cost-analysis dashboard for the data tools the team uses.'
+    ],
+    metric: '9 markets · 5+ pipelines · 3 workstreams',
     links: [{label:'Read the case study', slug:'toyota'}]
   },
   {
@@ -22,10 +27,14 @@ export const employers: Employer[] = [
     sub: 'Institute for Biomedical Informatics',
     role: 'Data Management Assistant',
     dates: 'September 2025 – March 2026',
-    location: 'Cologne, Germany · On-site · Part-time',
+    location: 'Cologne, Germany · On-site · Part-time alongside MSc',
     logo: 'uniklinik.png',
     stack: 'Python / Flask / Plotly / ML / Data validation',
-    text: 'I curated and validated research datasets for clinical analytics, built a patient-survey dashboard on a tight deadline, and created Python pipelines that preprocess and classify research data with lightweight ML models and prompt-based classifiers.',
+    points: [
+      'Curated and validated research datasets for clinical analytics.',
+      'Built a patient-survey dashboard on a tight deadline, plus Flask and Plotly dashboards for the research team.',
+      'Created Python pipelines that preprocess and classify research data with lightweight ML models and prompt-based classifiers.'
+    ],
     metric: '3 interactive dashboards',
     links: [{label:'Read the case study', slug:'clinical'}]
   },
@@ -34,10 +43,15 @@ export const employers: Employer[] = [
     sub: 'Deutsche Gesellschaft für Internationale Zusammenarbeit · GET.transform',
     role: 'Digital Infrastructure Intern',
     dates: 'September 2025 – March 2026',
-    location: 'Bonn, Germany · Hybrid',
+    location: 'Bonn, Germany · Hybrid · Internship alongside MSc',
     logo: 'giz.png',
     stack: 'Microsoft Lists / SharePoint / Teams / Power BI / Microsoft Fabric / Airtable',
-    text: 'I migrated the programme’s project-management data from Excel to Microsoft Lists, built SharePoint and Teams structures, mapped process flows for a new project-management system, and trained colleagues through workshops and a user manual. I also built proofs of concept for the new system in Airtable, Power BI and Microsoft Fabric.',
+    points: [
+      'Migrated the programme’s project-management data from Excel to Microsoft Lists.',
+      'Built SharePoint and Teams structures and mapped process flows for a new project-management system.',
+      'Built proofs of concept for the new system in Airtable, Power BI and Microsoft Fabric.',
+      'Trained colleagues through workshops and a user manual.'
+    ],
     metric: 'Team across Europe, Latin America and Africa',
     links: [{label:'Read the case study', slug:'giz'}]
   },
@@ -49,7 +63,11 @@ export const employers: Employer[] = [
     location: 'Islamabad, Pakistan · Remote · Full-time',
     logo: 'Teradata.png',
     stack: 'Teradata (BTEQ, TPT, GCFR) / Informatica PowerCenter / Azure / AWS / PySpark / Terraform / Jenkins / Control-M',
-    text: 'I delivered ETL/ELT pipelines, data-quality fixes and platform operations for retail and automotive clients, and ran Python and PySpark training for engineers across delivery centres. Git, Terraform and the CI/CD pipelines I managed cut deployment errors by ~40%.',
+    points: [
+      'Delivered ETL/ELT pipelines, data-quality fixes and platform operations for retail and automotive clients.',
+      'Ran Python and PySpark training for engineers across delivery centres.',
+      'Cut deployment errors by ~40% with Git, Terraform and the CI/CD pipelines I managed.'
+    ],
     metric: '30+ ETL workflows · 5 Teradata awards',
     engagements: [
       {period:'Jan – May 2025', client:'Volvo Cars (Sweden)', role:'Cloud Data Engineer', highlight:'~40% lower ingestion latency'},
@@ -88,12 +106,12 @@ export const studies: Study[] = [
     domains: ['Data Engineering', 'Analytics'],
     stack: ['Snowflake', 'SQL', 'Python', 'Data quality'],
     intro: 'Monthly and quarterly CO2 and portfolio extracts for governance, risk and compliance managers across 9 markets, plus macroeconomic factors in risk reporting.',
-    metric: '9 markets · monthly & quarterly',
+    metric: '9 markets · 5+ pipelines · 3 workstreams',
     flow: ['Legacy sources', 'ETL into Snowflake', 'Reconciliation checks', 'Automated extracts', 'GRC reporting'],
     sections: [
       {title:'Context', text:'Toyota Financial Services reports CO2 and portfolio figures per market to its governance, risk and compliance (GRC) managers every month and quarter, and its risk reporting draws on macroeconomic factors. These outputs feed audit-critical reporting, so every figure has to trace back to source.'},
       {title:'My work', text:'I automated the monthly and quarterly reporting extracts for 9 markets, replacing manual preparation, and integrated macroeconomic factors into the risk reporting data. I built reconciliation checks that compare counts and balances between legacy sources and the Snowflake warehouse, and migrated legacy data into Snowflake through 5+ ETL pipelines. I also built a cost-analysis dashboard that shows what the team’s data tools cost and where usage concentrates.'},
-      {title:'Result', text:'Repeatable, traceable extracts on a fixed reporting cadence, macroeconomic factors available in risk reporting, and one view of tool costs for the team.'}
+      {title:'Result', text:'Three workstreams running on the warehouse: automated GRC extracts for 9 markets on a monthly and quarterly cadence, macroeconomic factors in risk reporting, and one view of the team’s tool costs.'}
     ]
   },
   {
