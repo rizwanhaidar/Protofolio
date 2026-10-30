@@ -1,28 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navigation from '../components/Navigation.astro';
-import Hero from '../components/Hero.astro';
-import LogoMarquee from '../components/LogoMarquee.astro';
-import CaseStudiesSection from '../components/CaseStudiesSection.astro';
-import SkillsSection from '../components/SkillsSection.astro';
-import ExperienceSection from '../components/ExperienceSection.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import EducationSection from '../components/EducationSection.astro';
-import CertificationsSection from '../components/CertificationsSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import '../styles/global.css';
+import Layout from '../layouts/PortfolioLayout.astro';
+import Profile from '../components/Profile.astro';
 ---
-
-<BaseLayout>
-  <main id="top" class="relative mx-auto flex max-w-7xl flex-col gap-12 md:gap-16 px-5 pb-16 pt-4 sm:px-7 md:px-10 md:pb-24 md:pt-5">
-    <Navigation />
-    <Hero />
-    <ExperienceSection />
-    <SkillsSection />
-    <LogoMarquee />
-    <CaseStudiesSection />
-    <EducationSection />
-    <CertificationsSection />
-    <ContactSection />
-  </main>
-</BaseLayout>
+<Layout home={true}><Profile mode="professional"/></Layout>
