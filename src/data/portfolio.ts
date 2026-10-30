@@ -71,7 +71,7 @@ export const markets = [
 ];
 
 export const awards = [
-  {award:'Spot Award', date:'2025', reason:''},
+  {award:'Spot Award', date:'2025', reason:'Go-live of the Prince George refinery data integration, which I delivered end to end from sourcing to reporting with support from the operations team. I supported the go-live on a local holiday; it was recognized across the organization and by the client.'},
   {award:'Spot Award', date:'March 2024', reason:'Python and PySpark enablement content and two training sessions, one at delivery-centre level'},
   {award:'Quarterly Excellence Award', date:'Q1 2024', reason:'Back end of a MicroStrategy dashboard for the Federated Co-operatives Energy team'},
   {award:'Spot Award', date:'September 2023', reason:'Coordinating onboarding for the 2023 L.E.A.P. graduate cohort'},

@@ -491,7 +491,7 @@ a,button {transition:color var(--duration),background-color var(--duration)}
 }
 /* The mark and the organization name never depend on a single image. */
 .organization-mark {display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:16px;max-width:100%}
-.organization-mark img,.employer-identity .organization-mark img,.study-identity .organization-mark img,.case-org .organization-mark img {width:200px;max-width:100%;height:72px;padding:12px;object-fit:contain;object-position:center;background:white;border:1px solid var(--line);border-radius:var(--radius);margin:0}
+.organization-mark img,.employer-identity .organization-mark img,.study-identity .organization-mark img,.case-org .organization-mark img {width:200px;max-width:100%;height:72px;padding:0;object-fit:contain;object-position:left center;background:none;border:0;border-radius:0;margin:0}
 /* all logo tiles share one size */
 .organization-mark span {font-size:20px;font-weight:600;line-height:1.4;color:inherit}
 .institution .organization-mark span {font-size:26px}
