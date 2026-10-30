@@ -13,7 +13,7 @@ export const employers: Employer[] = [
     location: 'Cologne, Germany · Hybrid',
     logo: '',
     stack: 'Snowflake / SQL / Python / ETL / Reconciliation / Dashboards',
-    text: 'I automate the monthly and quarterly audit-critical reporting extracts (CO2 and portfolio figures per market) that governance, risk and compliance managers use across 9 markets. I also migrate legacy data into the Snowflake warehouse with reconciliation checks, and built a cost-analysis dashboard for the data tools the team uses.',
+    text: 'I automate the monthly and quarterly audit-critical reporting extracts (CO2 and portfolio figures per market) that governance, risk and compliance managers use across 9 markets, and integrated macroeconomic factors into risk reporting. I also migrate legacy data into the Snowflake warehouse with reconciliation checks, and built a cost-analysis dashboard for the data tools the team uses.',
     metric: '9 markets · monthly & quarterly reporting',
     links: [{label:'Read the case study', slug:'toyota'}]
   },
@@ -87,13 +87,13 @@ export const studies: Study[] = [
     mode: 'professional',
     domains: ['Data Engineering', 'Analytics'],
     stack: ['Snowflake', 'SQL', 'Python', 'Data quality'],
-    intro: 'Monthly and quarterly CO2 and portfolio extracts for governance, risk and compliance managers across 9 markets.',
+    intro: 'Monthly and quarterly CO2 and portfolio extracts for governance, risk and compliance managers across 9 markets, plus macroeconomic factors in risk reporting.',
     metric: '9 markets · monthly & quarterly',
     flow: ['Legacy sources', 'ETL into Snowflake', 'Reconciliation checks', 'Automated extracts', 'GRC reporting'],
     sections: [
-      {title:'Context', text:'Toyota Financial Services reports CO2 and portfolio figures per market to its governance, risk and compliance (GRC) managers every month and quarter. These extracts feed audit-critical reporting, so every figure has to trace back to source.'},
-      {title:'My work', text:'I automated the monthly and quarterly reporting extracts for 9 markets, replacing manual preparation. I built reconciliation checks that compare counts and balances between legacy sources and the Snowflake warehouse, and migrated legacy data into Snowflake through 5+ ETL pipelines. I also built a cost-analysis dashboard that shows what the team’s data tools cost and where usage concentrates.'},
-      {title:'Result', text:'Repeatable, traceable extracts on a fixed reporting cadence, and one view of tool costs for the team.'}
+      {title:'Context', text:'Toyota Financial Services reports CO2 and portfolio figures per market to its governance, risk and compliance (GRC) managers every month and quarter, and its risk reporting draws on macroeconomic factors. These outputs feed audit-critical reporting, so every figure has to trace back to source.'},
+      {title:'My work', text:'I automated the monthly and quarterly reporting extracts for 9 markets, replacing manual preparation, and integrated macroeconomic factors into the risk reporting data. I built reconciliation checks that compare counts and balances between legacy sources and the Snowflake warehouse, and migrated legacy data into Snowflake through 5+ ETL pipelines. I also built a cost-analysis dashboard that shows what the team’s data tools cost and where usage concentrates.'},
+      {title:'Result', text:'Repeatable, traceable extracts on a fixed reporting cadence, macroeconomic factors available in risk reporting, and one view of tool costs for the team.'}
     ]
   },
   {
