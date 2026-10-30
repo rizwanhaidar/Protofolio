@@ -343,8 +343,8 @@ export const studies: Study[] = [
       "DeBERTa",
       "Transformer"
     ],
-    "intro": "Comparing pretraining, shortcut learning and cross-genre generalization on SNLI and MultiNLI.",
-    "metric": "91.04% SNLI test accuracy",
+    "intro": "Can a model trained to infer relationships between sentences generalize to unfamiliar genres? Three architectures were compared on SNLI and MultiNLI.",
+    "metric": "91.04% → 74.31% BERT accuracy",
     "source": "Mining Media Data 2, Project 1: NLI, Team 3 report, sections 2–6 and appendix.",
     "sections": [
       {
@@ -392,7 +392,7 @@ export const studies: Study[] = [
       "LLMs",
       "Macro-F1"
     ],
-    "intro": "Supervised multilingual models and in-context learning under linguistic and label-distribution shift.",
+    "intro": "How well can models identify polarization in English and Urdu when the languages and label frequencies differ? The team compared trained classifiers with prompted language models.",
     "metric": "0.7630 Urdu macro-F1",
     "source": "Team 25 NLP project report, dated February 9, 2026, sections 3–9 and Tables 2–3.",
     "sections": [
@@ -434,8 +434,8 @@ export const studies: Study[] = [
       "Graph neural networks",
       "Minority-class F1"
     ],
-    "intro": "A controlled comparison of graph approaches for rare illicit-transaction detection.",
-    "metric": "Reproduction & feature ablation",
+    "intro": "Can reconstructing transaction features improve detection of rare illicit transfers? A reproduced graph-learning baseline was tested against an edge-feature variant.",
+    "metric": "FRAD-B: no F1 gain established",
     "source": "A Comparative Study of Graph Neural Network Approaches for Anti-Money Laundering Detection, sections 6–7 and Individual Contributions.",
     "sections": [
       {
