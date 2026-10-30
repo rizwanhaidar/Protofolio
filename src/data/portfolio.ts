@@ -36,8 +36,8 @@ export const employers: Employer[] = [
     dates: 'September 2025 – March 2026',
     location: 'Bonn, Germany · Hybrid',
     logo: 'giz.png',
-    stack: 'Microsoft Lists / SharePoint / Teams / Process mapping',
-    text: 'I migrated the programme’s project-management data from Excel to Microsoft Lists, built SharePoint and Teams structures, mapped process flows for a new project-management system, and trained colleagues through workshops and a user manual.',
+    stack: 'Microsoft Lists / SharePoint / Teams / Power BI / Microsoft Fabric / Airtable',
+    text: 'I migrated the programme’s project-management data from Excel to Microsoft Lists, built SharePoint and Teams structures, mapped process flows for a new project-management system, and trained colleagues through workshops and a user manual. I also built proofs of concept for the new system in Airtable, Power BI and Microsoft Fabric.',
     metric: 'Team across Europe, Latin America and Africa',
     links: [{label:'Read the case study', slug:'giz'}]
   },
@@ -155,15 +155,16 @@ export const studies: Study[] = [
     org: 'GIZ',
     relationship: 'Employer · Digital Infrastructure Intern',
     mode: 'professional',
-    domains: ['Digital infrastructure'],
-    stack: ['Microsoft Lists', 'SharePoint', 'Teams', 'Excel', 'Process mapping'],
+    domains: ['Digital infrastructure', 'Analytics'],
+    stack: ['Microsoft Lists', 'SharePoint', 'Teams', 'Power BI', 'Microsoft Fabric', 'Airtable'],
     logo: 'giz.png',
     intro: 'Moved the programme’s project data into Microsoft Lists and onboarded a team spread over three continents.',
     metric: 'Team across Europe, Latin America and Africa',
     sections: [
       {title:'Context', text:'GET.transform is a European multi-donor programme, implemented by GIZ, that helps public-sector partners transform their power sectors. Its team works across Belgium, Chile, Central America, Germany, Eswatini, Lesotho, Mozambique, Peru and Uganda.'},
       {title:'My work', text:'I migrated project-management data from Excel to Microsoft Lists and assessed process flows to define requirements for a new project-management system. I built folder structures, landing pages and synchronized SharePoint–Teams connections, and maintained the project’s SharePoint pages. I trained colleagues through virtual and in-person sessions, wrote the user manual, and presented project status overviews in team meetings.'},
-      {title:'Result', text:'One shared project-data environment that the team adopted.'}
+      {title:'Proofs of concept', text:'To inform the choice of a new project-management system, I built proofs of concept on three platforms. In Airtable, I moved relational project data into a central base with interfaces and role-based access. In Power BI, I designed KPIs and reporting cadences for performance monitoring. In Microsoft Fabric, I built a proof of concept for the programme’s data and reporting.'},
+      {title:'Result', text:'One shared project-data environment that the team adopted, and tested options for the programme’s next project-management and reporting system.'}
     ]
   },
   {
