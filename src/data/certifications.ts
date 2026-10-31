@@ -3,6 +3,7 @@ export interface Certification {
   issuer: string;
   credlyUrl: string;
   badgeImage: string;
+  note?: string;
 }
 
 export const certifications: Certification[] = [
@@ -15,6 +16,7 @@ export const certifications: Certification[] = [
   {
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
+    note: "Expired",
     credlyUrl: "https://www.credly.com/badges/cf6567e9-53a0-4718-bc90-e40017e26eb3/public_url",
     badgeImage: "/Protofolio/Certifications/aws-certified-cloud-practitioner.png"
   },
